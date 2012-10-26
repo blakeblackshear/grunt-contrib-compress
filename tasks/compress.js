@@ -125,7 +125,8 @@ module.exports = function(grunt) {
       if (options.flatten) {
         relative = '';
       } else if (basePath && basePath.length >= 1) {
-        relative = grunt.util._(relative).strRight(basePath).trim(path.sep);
+        relative = grunt.util._(relative).strRight(basePath);
+        relative = relative.trim(path.sep);
       }
 
       if (rootDir && rootDir.length >= 1) {
